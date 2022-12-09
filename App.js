@@ -14,9 +14,11 @@ export default function App() {
       <View>
          <Text style= {styles.title}>Bitcoin</Text>
          <View style = {{flexDirection: "row"}}>
-            <Text style = {styles.text}>1</Text>
+          <View style = {styles.rankContainer}>
+            <Text style = {styles.rank}>1</Text>
+          </View>
             <Text style = {styles.text}>BTC</Text>
-            <AntDesign name='caretdown' size={20} color = "white" />
+            <AntDesign name='caretdown' size={12} color = "white" style = {{alignSelf : 'center',marginRight :10}} />
             <Text style = {styles.text}>0.63%</Text>
          </View>
       </View>
@@ -39,7 +41,8 @@ const styles = StyleSheet.create({
   title: {
     color:'white',
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginBottom : 3
   },
   text:{
     color:'white',
@@ -51,5 +54,15 @@ const styles = StyleSheet.create({
     borderBottomColor : 'grey',
     padding: 15,
     justifyContent : 'space-between'
+  },
+  rank:{
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  rankContainer:{
+    backgroundColor : '#585858',
+    paddingHorizontal : 5,
+    borderRadius : 5,
+    marginRight: 5
   }
 });
