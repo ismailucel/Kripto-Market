@@ -3,14 +3,19 @@ import React from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
 import CoinDetaiedScreen  from './src/screens/CoinDetailedScreen';
 import HomeScreen  from './src/screens/HomeScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import Navigation from './src/navigation';
+
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <HomeScreen />
-      <CoinDetaiedScreen />
-      <StatusBar style="light" />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Navigation />
+        <StatusBar style="light" />
+      </View>
+    </NavigationContainer>
   );
 }
 
