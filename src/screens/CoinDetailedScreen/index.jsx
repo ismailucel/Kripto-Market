@@ -4,6 +4,9 @@ import Coin from '../../../assets/data/crypto.json'
 import CoinDetailedHeader from "./components/CoinDetailedHeader";
 import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { useRoute } from "@react-navigation/native";
+
 
 const CoinDetailedScreen = () => {
     const { 
@@ -21,6 +24,10 @@ const CoinDetailedScreen = () => {
     
      const [coinValue, setCoinValue] = useState("1")
      const [usdValue, setUsdValue] = useState(current_price.usd.toString()) 
+     const route = useRoute();
+
+     const {params: { coinId }} = route;
+
 
      const changeCoinValue = (value) => {
         setCoinValue(value)
@@ -63,7 +70,7 @@ const CoinDetailedScreen = () => {
           name={price_change_percentage_24h < 0 ? 'caretdown' : 'caretup' } 
           size={12} 
           color = {'white'}
-           style = {{alignSelf : 'center',marginRight :10}} 
+          style = {{alignSelf : 'center',marginRight :10}} 
            />
           <Text style = {styles.priceChange}>
           {price_change_percentage_24h.toFixed(2)}%
