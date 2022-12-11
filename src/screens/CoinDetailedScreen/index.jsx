@@ -79,6 +79,7 @@ const CoinDetailedScreen = () => {
     return(
     <View style={{paddingHorizontal:10}}>
       <CoinDetailedHeader
+      coinId={id}
        image ={small} 
        name = {name} 
        symbol ={symbol} 
