@@ -5,6 +5,7 @@ import CoinDetaiedScreen  from './src/screens/CoinDetailedScreen';
 import HomeScreen  from './src/screens/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigation from './src/navigation';
+import WatchlistProvider from './src/Contexts/WatchlistContext';
 
 
 
@@ -15,10 +16,13 @@ export default function App() {
         background:'#121212',
       },
     }}>
-      <View style={styles.container}>
-        <Navigation />
-        <StatusBar style="light" />
-      </View>
+      <WatchlistProvider>
+        <View style={styles.container}>
+          <Navigation />
+          <StatusBar style="light" />
+        </View>
+      </WatchlistProvider>
+      
     </NavigationContainer>
   );
 }
