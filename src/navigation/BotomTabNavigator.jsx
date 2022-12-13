@@ -36,7 +36,7 @@ const BottomTabNavigator = () => {
        component={PortfolioScreen} 
        options= {{
         tabBarIcon : ({focused, color}) => (
-        <Foundation name="graph-pie" size={focused ? 30 : 25} color={color} />
+        <Foundation name="graph-pie" size={focused ? 35 : 30} color={color} />
         ),
       }} 
       />

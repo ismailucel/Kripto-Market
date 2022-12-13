@@ -1,10 +1,12 @@
 import React from "react";
 import { View, Text } from 'react-native'
+//import { FlatList } from "react-native-web";
+import PortfolioAssetsList from './components/PortfolioAssetsList';
 
 const PortfolioScreen = () =>{
     return(
         <View>
-            <Text> welcome to portfolio screen</Text>
+            <PortfolioAssetsList />
         </View>
     )
 
