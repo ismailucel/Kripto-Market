@@ -2,13 +2,14 @@ import React from "react";
 import { View, Text, FlatList, Pressable } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import styles from "./styles";
+import PortfolioAssetItem from '../PortfolioAssetItem';
 
 const PortfolioAssetsList = () =>{
     return(
         <View>
             <FlatList 
-            data={[]}
-            renderItem={()=> <Text>Item</Text>}
+            data={[{id:'bitcoin'}]}
+            renderItem={({item})=> <PortfolioAssetItem assetItem={item}/>}
             ListHeaderComponent={
                 <>
                     <View style={styles.balanceContainer}>
