@@ -9,11 +9,19 @@ import { useWatchlist } from '../../../../Contexts/WatchlistContext'
 const CoinDetailedHeader=(props) =>{
     const{ coinId, image, symbol, marketCapRank} = props;
     const navigation = useNavigation();
-    const { watchlistCoinIds } = useWatchlist();
+    const { watchlistCoinIds, storeWatchlistCoinId, removeWatchlistCoinId } = useWatchlist();
 
     const checkIfCoinIsWatchlisted = () => {
         return watchlistCoinIds.some((coinIdValue) => coinIdValue ===coinId)
     }
+
+    const handleWatchlistCoin =() =>{
+        if(checkIfCoinIsWatchlisted()){
+            return removeWatchlistCoinId(coinId)
+        }
+        return storeWatchlistCoinId(coinId)
+    };
+
     return(
          <View style = {styles.headerContainer}>
         <Ionicons name="chevron-back-sharp" size={30} color = "white" onPress={()=> navigation.goBack()} />
@@ -28,6 +36,7 @@ const CoinDetailedHeader=(props) =>{
         name={checkIfCoinIsWatchlisted() ? "star" : "star-o"} 
         size={25} 
         color={checkIfCoinIsWatchlisted() ? "#FFBF00" : "white"} 
+        onPress={handleWatchlistCoin}
         />
        </View>
     );

@@ -18,7 +18,7 @@ const CoinItem = ({ marketCoin }) => {
 
    const navigation = useNavigation();
 
-   const percentageColor = price_change_percentage_24h < 0 ? '#ea3943': '#16c784'
+   const percentageColor = price_change_percentage_24h < 0 ? '#ea3943': '#16c784' || 'white';
 
    const normalizeMarketCap = (marketCap) =>{
       if(marketCap > 1_000_000_000_000){
@@ -50,7 +50,7 @@ const CoinItem = ({ marketCoin }) => {
             </View>
             <Text style = {styles.text}>{symbol.toUpperCase()}</Text>
             <AntDesign name={price_change_percentage_24h < 0 ? 'caretdown' : 'caretup' } size={12} color = {percentageColor} style = {{alignSelf : 'center',marginRight :10}} />
-            <Text style = {{color:percentageColor}}>{price_change_percentage_24h.toFixed(3)}%</Text>
+            <Text style = {{color:percentageColor}}>{price_change_percentage_24h?.toFixed(3)}%</Text>
          </View>
       </View>
       <View style = {{marginLeft:'auto', alignItems:'flex-end'}}>

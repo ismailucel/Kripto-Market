@@ -38,7 +38,8 @@ const CoinDetailedScreen = () => {
       return <ActivityIndicator size="large" />
     }
 
-    const { 
+    const {
+    id,
     image: { small }, 
     name,
     symbol,
@@ -51,7 +52,7 @@ const CoinDetailedScreen = () => {
     } = coin;
     
         const { prices } = coinMarketData;
-    const percentageColor =price_change_percentage_24h < 0 ? '#ea3943': '#16c784'
+    const percentageColor =price_change_percentage_24h < 0 ? '#ea3943': '#16c784' || 'white';
     const screenWidth = Dimensions.get('window').width;
 
      const changeCoinValue = (value) => {
@@ -79,7 +80,7 @@ const CoinDetailedScreen = () => {
     return(
     <View style={{paddingHorizontal:10}}>
       <CoinDetailedHeader
-      coinId={id}
+       coinId={id}
        image ={small} 
        name = {name} 
        symbol ={symbol} 
@@ -98,7 +99,7 @@ const CoinDetailedScreen = () => {
           style = {{alignSelf : 'center',marginRight :10}} 
            />
           <Text style = {styles.priceChange}>
-          {price_change_percentage_24h.toFixed(2)}%
+          {price_change_percentage_24h?.toFixed(2)}%
         </Text>
         </View>
        </View>
@@ -113,7 +114,7 @@ const CoinDetailedScreen = () => {
            />
         </View>
         <View style = {{flexDirection:'row',flex:1}}>
-          <Text style={{color:'white',alignSelf:'center'}}>USD</Text>
+          <Text style={{color:'white',alignSelf:'center'}}>TRY</Text>
           <TextInput
           style={styles.input} 
           value={usdValue}
