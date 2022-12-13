@@ -43,6 +43,19 @@ const styles = StyleSheet.create({
         fontWeight:'700',
         paddingVertical:2,
         paddingHorizontal:10
+    },
+    buttonContainer:{
+        backgroundColor:'#4169E1',
+        padding:10,
+        alignItems:'center',
+        marginVertical:25,
+        marginHorizontal:10,
+        borderRadius:5
+    },
+    buttonText:{
+        color:'white',
+        fontSize:17,
+        fontWeight:'600'
     }
 
 })

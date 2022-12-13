@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, Pressable } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import styles from "./styles";
 
@@ -31,6 +31,11 @@ const PortfolioAssetsList = () =>{
                         <Text style={styles.assetsLabel}> Your assets</Text>
                     </View>
                 </>
+            }
+            ListFooterComponent={
+                <Pressable style={styles.buttonContainer}>
+                  <Text style={styles.buttonText}> Add new asset</Text>
+                </Pressable>
             }
             />
         </View>
