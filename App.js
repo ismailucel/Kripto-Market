@@ -6,6 +6,7 @@ import HomeScreen  from './src/screens/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import Navigation from './src/navigation';
 import WatchlistProvider from './src/Contexts/WatchlistContext';
+import { RecoilRoot } from 'recoil';
 
 
 
@@ -16,13 +17,14 @@ export default function App() {
         background:'#121212',
       },
     }}>
+      <RecoilRoot>
       <WatchlistProvider>
         <View style={styles.container}>
           <Navigation />
           <StatusBar style="light" />
         </View>
       </WatchlistProvider>
-      
+      </RecoilRoot>
     </NavigationContainer>
   );
 }

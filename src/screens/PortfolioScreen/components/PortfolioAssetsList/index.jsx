@@ -4,13 +4,16 @@ import { AntDesign } from '@expo/vector-icons';
 import styles from "./styles";
 import PortfolioAssetItem from '../PortfolioAssetItem';
 import { useNavigation } from "@react-navigation/native";
+import { useRecoilValue, useRecoilState } from "recoil";
+import { allPortfolioAssets } from "../../../../atoms/PortfolioAssets"; 
 
 const PortfolioAssetsList = () =>{
     const navigation = useNavigation();
+    const assets = useRecoilValue(allPortfolioAssets);
     return(
         <View>
             <FlatList 
-            data={[{id:'bitcoin'}]}
+            data={assets}
             renderItem={({item})=> <PortfolioAssetItem assetItem={item}/>}
             ListHeaderComponent={
                 <>
