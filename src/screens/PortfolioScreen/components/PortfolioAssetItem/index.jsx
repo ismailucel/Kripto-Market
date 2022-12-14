@@ -13,7 +13,9 @@ const PortfolioAssetItem=({assetItem}) =>{
         quantityBought,
         ticker,
     } = assetItem;
-    console.log(currentPrice);
+    
+    const isChangePositive =() =>priceChangePercentage >=0;
+
     return(
         <View style={styles.coinContainer}>
             <Image source={{uri:image}} style={{height:30,width:30,marginRight:10,alignself:'center'}}/>
@@ -25,9 +27,9 @@ const PortfolioAssetItem=({assetItem}) =>{
                 <Text style={styles.title}>{currentPrice}</Text>
                 <View style={{flexDirection:'row'}}>
                     <AntDesign 
-                            name={'caretup'} 
+                            name={isChangePositive() ?'caretup': 'caretdown'} 
                             size={12} 
-                            color = {'#16c784'}
+                            color = {isChangePositive() ?'#16c784' : '#ea3943'}
                             style = {{alignSelf : 'center',marginRight :10}} 
                     />
                     <Text style={{color:'#16c784',fontWeight:'700'}}>{priceChangePercentage.toFixed(2)}</Text>
