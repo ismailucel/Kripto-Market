@@ -14,7 +14,7 @@ export const allPortfolioBoughtAssetsFromAPI= selector({
     key:'allPortfolioBoughtAssetsFromAPI',
     get: async ({get}) =>{
         const boughtPortfolioAssets= get(allPortfolioBoughtAssetsInStorage)
-        const portfolioAssetsMarketData = await getWatchlistedCoins(1,boughtPortfolioAssets.map((portfolioAssets) =>(portfolioAssets.id).join(',')))
+        const portfolioAssetsMarketData = await getWatchlistedCoins(1, boughtPortfolioAssets.map((portfolioAsset) => portfolioAsset.id).join(','))
 
         const boughtAssets = boughtPortfolioAssets.map((boughtAsset) => {
             const portfolioAsset= portfolioAssetsMarketData.filter((item)=>boughtAsset.id===item.id)
@@ -24,7 +24,7 @@ export const allPortfolioBoughtAssetsFromAPI= selector({
                 priceChangePercentage:portfolioAsset.price_chane_percentage_24
             }
         })
-        return boughtAssets.sort((item1, item2) => (item1.quantityBought*item1.currentPrice)<(item2.quantityBought*item2.currentPrice))
+        return boughtAssets.sort((item1, item2) => (item1.quantityBought*item1.currentPrice)<(item2.quantityBought*item2.c))
     }
 })
 
