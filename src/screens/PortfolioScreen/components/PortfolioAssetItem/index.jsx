@@ -29,7 +29,7 @@ const PortfolioAssetItem=({assetItem}) =>{
                             color = {'#16c784'}
                             style = {{alignSelf : 'center',marginRight :10}} 
                     />
-                    <Text style={{color:'#16c784',fontWeight:'700'}}>1.2%</Text>
+                    <Text style={{color:'#16c784',fontWeight:'700'}}>1.22%</Text>
                 </View>
             </View>
             <View style={styles.quantityContainer}>
