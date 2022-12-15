@@ -58,13 +58,13 @@ const CoinDetailedScreen = () => {
      const changeCoinValue = (value) => {
         setCoinValue(value)
         const floatValue = parseFloat(value.replace(',','.')) || 0
-        setUsdValue((floatValue* current_price.usd).toString())
+        setUsdValue((floatValue* current_price.try).toString())
      };
 
      const changeUsdValue = (value) => {
         setUsdValue(value)
         const floatValue = parseFloat(value.replace(',','.')) || 0
-        setCoinValue((floatValue / current_price.usd).toString())
+        setCoinValue((floatValue / current_price.try).toString())
      };
 
    /* useEffect(() => {
@@ -89,7 +89,7 @@ const CoinDetailedScreen = () => {
        <View style = {styles.priceContainer}>
         <View>
           <Text style ={styles.name}>{name}</Text>
-          <Text style ={styles.currentPrice}>${current_price.usd}</Text>
+          <Text style ={styles.currentPrice}>{current_price.try} TRY</Text>
         </View>
         <View style = {{backgroundColor:percentageColor, paddingHorizontal :3,paddingVertical:8,borderRadius:5,flexDirection:'row'}}>
           <AntDesign 
