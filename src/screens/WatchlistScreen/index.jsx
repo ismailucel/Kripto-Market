@@ -24,13 +24,13 @@ const WatchlistScreen = () =>{
     };
 
     useEffect(() => {
-        fetchWatchListedCoins();
+        if(watchlistCoinIds.length>0){
+            fetchWatchListedCoins();
+        }
+        
     }, [watchlistCoinIds])
 
-   /*     useEffect(() => {
-        fetchWatchListedCoins();
-    }, [watchlistCoinIds]) */ 
-    
+
 
     return(
         <FlatList 
