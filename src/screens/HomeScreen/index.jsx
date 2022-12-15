@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CoinItem from '../../components/CoinItem';
 //import cryptocurrencies from '../../../assets/data/cryptocurrencies.json';
 import { getMarketData } from '../../services/requests'
-import { FlatList, RefreshControl } from 'react-native';
+import { FlatList, RefreshControl, View, Text } from 'react-native';
 
 
 const HomeScreen = () => {
@@ -35,6 +35,8 @@ const HomeScreen = () => {
   
   
     return(
+      <View>
+        <Text style={{color:'white',fontSize:25, letterSpacing:1,paddingHorizontal:20, paddingBottom:10}}>Crypto Assets</Text>
         <FlatList 
         data={coins}
         renderItem = {({item}) => <CoinItem marketCoin={item} />}
@@ -47,6 +49,7 @@ const HomeScreen = () => {
           /> 
         }
       />
+      </View>
     );
 };
 
