@@ -5,7 +5,8 @@ import styles from "./styles";
 import PortfolioAssetItem from '../PortfolioAssetItem';
 import { useNavigation } from "@react-navigation/native";
 import { useRecoilValue, useRecoilState } from "recoil";
-import { allPortfolioAssets } from "../../../../atoms/PortfolioAssets"; 
+import { allPortfolioAssets } from "../../../../atoms/PortfolioAssets";
+import { SwipeListView } from "react-native-swipe-list-view";
 
 const PortfolioAssetsList = () =>{
     const navigation = useNavigation();
