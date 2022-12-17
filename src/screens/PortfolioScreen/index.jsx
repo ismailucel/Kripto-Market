@@ -6,7 +6,7 @@ import PortfolioAssetsList from './components/PortfolioAssetsList';
 const PortfolioScreen = () =>{
     return(
         <View style={{flex: 1}}>
-            <Suspense fallback={<Text style={{color:'white'}}>Loading, please wait!</Text>}>
+            <Suspense fallback={<Text style={{color:'white'}}>Yükleniyor, lütfen bekleyin!</Text>}>
                 <PortfolioAssetsList />
             </Suspense>
         </View>

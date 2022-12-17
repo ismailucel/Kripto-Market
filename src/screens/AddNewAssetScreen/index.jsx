@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, Pressable } from "react-native";
+import { View, Text, TextInput, Pressable, KeyboardAvoidingView, Platform } from "react-native";
 import SearchableDropDown from "react-native-searchable-dropdown";
 import styles from "./styles";
 import { useRecoilState } from "recoil";
@@ -64,7 +64,7 @@ const AddNewAssetScreen = () =>{
       image: selectedCoin.image.small,
       ticker: selectedCoin.symbol.toUpperCase(),
       quantityBought: parseFloat(boughtAssetQuantity),
-      priceBought: selectedCoin.market_data.current_price.usd,
+      priceBought: selectedCoin.market_data.current_price.try,
     };
     const newAssets = [...assetsInStorage, newAsset];
     const jsonValue = JSON.stringify(newAssets);
@@ -75,7 +75,7 @@ const AddNewAssetScreen = () =>{
     
 
     return(
-        <View style={{flex:1}}>
+        <KeyboardAvoidingView style={{flex:1}} keyboardVerticalOffset={80} behavior={Platform.OS==='ios' ? 'padding': 'height'}>
             <SearchableDropDown
                 items={allCoins}
                 onItemSelect={(item)=>setSelectedCoinId(item.id)}
@@ -83,7 +83,7 @@ const AddNewAssetScreen = () =>{
                 itemStyle={styles.item}
                 itemTextStyle={{color:'white'}}
                 resetValue = {false}
-                placeholder={selectedCoinId ||"Select a coin..."}
+                placeholder={selectedCoinId ||"Coin seçiniz..."}
                 placeholderTextColor='white'
                 textInputProps={{
                     underlineColorAndroid:'transparent',
@@ -130,12 +130,12 @@ const AddNewAssetScreen = () =>{
                   style={{
                     ...styles.buttonText,
                     color: isQuantityEntered() ? 'grey' : 'white'
-                    }}> Add new asset</Text>
+                    }}> Yeni varlık ekleyin</Text>
             </Pressable>
                 </>
             )}
             
-        </View>
+        </KeyboardAvoidingView>
     )
 }
 

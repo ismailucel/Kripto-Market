@@ -23,7 +23,7 @@ const BottomTabNavigator = () => {
         }
     }}>
       <Tab.Screen 
-      name="Home" 
+      name="Anasayfa" 
       component={HomeScreen} 
       options= {{
         tabBarIcon : ({focused, color}) => (
@@ -32,7 +32,7 @@ const BottomTabNavigator = () => {
       }} 
       />
       <Tab.Screen 
-       name="Portfolio" 
+       name="Portfolyo" 
        component={PortfolioScreen} 
        options= {{
         tabBarIcon : ({focused, color}) => (
@@ -41,7 +41,7 @@ const BottomTabNavigator = () => {
       }} 
       />
       <Tab.Screen
-        name="Watchlist"
+        name="Takip Edilenler"
         component={WatchlistScreen}
         options= {{
          tabBarIcon : ({focused, color}) => (

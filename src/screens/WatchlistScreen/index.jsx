@@ -40,7 +40,7 @@ const WatchlistScreen = () =>{
                 <RefreshControl
                 refreshing ={loading}
                 tintColor ='white'
-                onRefresh={fetchWatchListedCoins}
+                onRefresh={ watchlistCoinIds.length > 0 ? fetchWatchListedCoins: null}
                 />
             }
         />

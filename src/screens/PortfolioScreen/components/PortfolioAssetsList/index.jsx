@@ -80,9 +80,9 @@ const PortfolioAssetsList = () =>{
                 <>
                     <View style={styles.balanceContainer}>
                         <View>
-                             <Text style={styles.currentBalance}>Current Balance</Text>
+                             <Text style={styles.currentBalance}>Hesap Durumu</Text>
                             <Text style={styles.currentBalanceValue}>{getCurrentBalance().toFixed(2)} TRY</Text>
-                            <Text style={{...styles.valueChange, color:isChangePositive() ? 'green' : 'red' }}>{getCurrentValueChange()} TRY (All Time)</Text>
+                            <Text style={{...styles.valueChange, color:isChangePositive() ? 'green' : 'red' }}>{getCurrentValueChange()} TRY (Tüm Zamanlar)</Text>
                         </View>
                         <View style={{...styles.priceChangePercentageContainer, backgroundColor: isChangePositive() ? 'green' : 'red'}}>
                             <AntDesign 
@@ -95,13 +95,13 @@ const PortfolioAssetsList = () =>{
                         </View>
                     </View>
                     <View>
-                        <Text style={styles.assetsLabel}> Your assets</Text>
+                        <Text style={styles.assetsLabel}> Varlıklarınız</Text>
                     </View>
                 </>
             }
             ListFooterComponent={
                 <Pressable style={styles.buttonContainer} onPress={() => navigation.navigate("AddNewAssetScreen")}>
-                  <Text style={styles.buttonText}> Add new asset</Text>
+                  <Text style={styles.buttonText}> Yeni varlık ekleyin</Text>
                 </Pressable>
             }
             />

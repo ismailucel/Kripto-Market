@@ -36,7 +36,7 @@ const HomeScreen = () => {
   
     return(
       <View>
-        <Text style={{color:'white',fontSize:25, letterSpacing:1,paddingHorizontal:20, paddingBottom:10}}>Crypto Assets</Text>
+        <Text style={{color:'white',fontSize:25, letterSpacing:1,paddingHorizontal:20, paddingBottom:10}}>Kripto Varlıkları (Powered By CoinGecko)</Text>
         <FlatList 
         data={coins}
         renderItem = {({item}) => <CoinItem marketCoin={item} />}

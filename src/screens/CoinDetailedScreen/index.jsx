@@ -18,7 +18,7 @@ const CoinDetailedScreen = () => {
 
     const [loading, setLoading] = useState(false);
     const [coinValue, setCoinValue] = useState("1")
-    const [usdValue, setUsdValue] = useState("") 
+    const [tryValue, setTryValue] = useState("") 
 
     const fetchCoinData = async () =>{
       setLoading(true);
@@ -26,7 +26,7 @@ const CoinDetailedScreen = () => {
       const fetchedCoinMarketData = await getCoinMarketChart(coinId);
       setCoin(fetchedCoinData);
       setCoinMarketData(fetchedCoinMarketData);
-      setUsdValue(fetchedCoinData.market_data.current_price.try.toString())
+      setTryValue(fetchedCoinData.market_data.current_price.try.toString())
       setLoading(false);
     }
 
@@ -58,11 +58,11 @@ const CoinDetailedScreen = () => {
      const changeCoinValue = (value) => {
         setCoinValue(value)
         const floatValue = parseFloat(value.replace(',','.')) || 0
-        setUsdValue((floatValue* current_price.try).toString())
+        setTryValue((floatValue* current_price.try).toString())
      };
 
-     const changeUsdValue = (value) => {
-        setUsdValue(value)
+     const changetryValue = (value) => {
+        setTryValue(value)
         const floatValue = parseFloat(value.replace(',','.')) || 0
         setCoinValue((floatValue / current_price.try).toString())
      };
@@ -73,7 +73,7 @@ const CoinDetailedScreen = () => {
      
        useEffect(() => {
 
-     }, [usdValue])
+     }, [tryValue])
 
      */
 
@@ -99,7 +99,7 @@ const CoinDetailedScreen = () => {
           style = {{alignSelf : 'center',marginRight :10}} 
            />
           <Text style = {styles.priceChange}>
-          {price_change_percentage_24h?.toFixed(2)}%
+          %{price_change_percentage_24h?.toFixed(2)}
         </Text>
         </View>
        </View>
@@ -117,9 +117,9 @@ const CoinDetailedScreen = () => {
           <Text style={{color:'white',alignSelf:'center'}}>TRY</Text>
           <TextInput
           style={styles.input} 
-          value={usdValue}
+          value={tryValue}
           keyboardType="numeric"
-          onChangeText={changeUsdValue}
+          onChangeText={changetryValue}
           />
         </View>
        </View>

@@ -14,7 +14,7 @@ const Navigation = () => {
             <Stack.Screen name={"Root"} component={BottomTabNavigator} options={{headerShown:false}}/>
             <Stack.Screen name={"CoinDetailedScreen"} component={CoinDetailedScreen}  options={{headerShown:false}}/>
             <Stack.Screen name={"AddNewAssetScreen"} component={AddNewAssetScreen} options={{
-                title:"Add New Asset",
+                title:"Yeni varlık ekleyin",
                 headerStyle:{
                     backgroundColor:'#121212'
                 },
