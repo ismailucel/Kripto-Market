@@ -115,7 +115,7 @@ const AddNewAssetScreen = () =>{
                     />
                 <Text style={styles.ticker}>{selectedCoin.symbol.toUpperCase()}</Text>
               </View> 
-                <Text style={styles.pricePerCoin}>{selectedCoin.market_data.current_price.usd}</Text>
+                <Text style={styles.pricePerCoin}>{selectedCoin.market_data.current_price.try}</Text>
             </View>
             
             <Pressable 
